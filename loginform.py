@@ -115,7 +115,7 @@ def history(login):
     form = Back()
     if form.is_submitted():
         return redirect(f"/success/{login}")
-    news = return_bookmarks(login)
+    news = return_history(login)
     return render_template("history.html", news=news, form=form)
 
 
