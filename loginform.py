@@ -8,6 +8,7 @@ from data.search_history import History
 from data.bookmark import Bookmarks
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_required, LoginManager, login_user, logout_user
+import os
 
 app = Flask(__name__)
 
@@ -152,7 +153,8 @@ def logout():
 def main():
     db_session.global_init("db/users.db")
     app.register_blueprint(news_api.blueprint)
-    app.run(port=5000, host='localhost')
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
 
 
 if __name__ == '__main__':
