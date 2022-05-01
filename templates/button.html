@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if current_user.is_authenticated %}
+    <h1>Личный кабинет</h1>
+    <form action="" method="post">
+        <p>{{ form.submit1(type="submit", class="btn btn-dark btn-block") }}</p>
+        <p>{{ form.submit(type="submit", class="btn btn-dark btn-block") }}</p>
+       <p>{{ form.submit2(type="submit", class="btn btn-dark btn-block") }}</p>
+            <p>{{ form.submit3(type="submit", class="btn btn-outline-dark") }}</p>
+    </form>
+{% endif %}
+
+{% endblock %}

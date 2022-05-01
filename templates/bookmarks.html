@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="" method="post" novalidate>
+<body>
+<style>
+   body{
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg,#2980b9, #8e44ad);
+  height: 100vh;
+  overflow: hidden;
+}
+message{
+color: #d22e3a
+}
+</style>
+<h1>Ваши закладки:</h1>
+    {% for item in news %}
+        <h2>{{ item }}</h2>
+    {% endfor %}
+    <p>{{ form.submit(type="submit", class="btn btn-outline-dark") }}</p>
+</body>
+
+    </form>
+{% endblock %}
