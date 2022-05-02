@@ -71,7 +71,7 @@ def success(login):
         if form.submit1.data:
             return redirect(f"/history/{login}")
         if form.submit2.data:
-            return redirect("https://t.me/Project3_3_bot")
+            return redirect("https://t.me/film_etc_helper_bot")
         if form.submit3.data:
             return redirect("/logout")
     return render_template('button.html', form=form)
